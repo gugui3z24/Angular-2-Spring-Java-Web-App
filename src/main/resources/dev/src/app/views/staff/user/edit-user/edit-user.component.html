@@ -1,0 +1,31 @@
+<app-header title="Edit User" description="Modify a user's profile. Note: Cannot change username or password."></app-header>
+
+<form #form="ngForm" (submit)="save()">
+  <fieldset>
+    <div class="form-group">
+      <label for="first">First Name</label>
+      <input type="text" appMask="name" class="form-control" id="first" autofocus [(ngModel)]="user.first" name="first" placeholder="First Name"
+        required>
+    </div>
+    <div class="form-group">
+      <label for="last">Last Name</label>
+      <input type="text" appMask="name" class="form-control" id="last" [(ngModel)]="user.last" name="last" placeholder="Last Name"
+        required>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="username" placeholder="Username"
+        readonly>
+    </div>
+    <div class="form-group">
+      <label for="permission">Permission (Default is User)</label>
+      <select class="form-control" id="permission-select" name="permission-select" [(ngModel)]="user.role.id" required>
+        <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+      </select>
+    </div>
+    <button [disabled]="!form.valid || form.pristine" type="submit" class="btn btn-outline-primary">
+      <i class="fas fa-save mr-1"></i>
+      Save
+    </button>
+  </fieldset>
+</form>

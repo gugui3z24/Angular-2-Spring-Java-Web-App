@@ -1,0 +1,7 @@
+<app-header title="Manager Articles" description="Modify an existing article"></app-header>
+
+<app-table [tableModel]="tableModel">
+  <ng-template let-row="rowData" appTableCell="Date">
+    <span>{{ row.createdAt | date }}</span>
+  </ng-template>
+</app-table>

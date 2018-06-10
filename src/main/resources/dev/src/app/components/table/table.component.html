@@ -1,0 +1,21 @@
+<div class="table-outer-container">
+  <table class="table table-hover">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col" *ngFor="let column of tableModel.columns; let i = index;">
+          <span>{{ column }}</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr (click)="onRowClick(row)" *ngFor="let row of tableModel.tableData" class="table-light">
+        <td *ngFor="let column of tableModel.columns">
+          <ng-container *ngIf="!hasCustomTemplate(column); else customTemplate">{{ tableModel.getRowData(column, row) }}</ng-container>
+          <ng-template #customTemplate>
+            <ng-container *ngTemplateOutlet="getCustomTemplate(column); context:{'rowData':row}"></ng-container>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

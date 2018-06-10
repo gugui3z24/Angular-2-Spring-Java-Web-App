@@ -1,0 +1,75 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand ml-3" routerLink="/">NoDQ.com</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto mr-3">
+
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">
+            <i class="fas fa-lock mr-1"></i>
+            {{ loginService.isLoggedIn() ? loginService.getUsername() : 'Staff' }}
+            <span class="caret"></span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="themes">
+            <a id="login-button" *ngIf="!loginService.isLoggedIn()" class="dropdown-item" (click)="showLoginModal()" href="javascript:void(0)">Login</a>
+            <a id="logout-button" *ngIf="loginService.isLoggedIn()" class="dropdown-item" (click)="loginService.logout()" href="javascript:void(0)">Logout</a>
+            <a class="dropdown-item" routerLink="/staff">Dashboard</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/create-article">Post Article</a>
+            <a class="dropdown-item" routerLink="/manage-article">Manage Articles</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/create-user">Create User</a>
+            <a class="dropdown-item" routerLink="/manage-user">Manage Users</a>
+          </div>
+        </li>
+      </ul>
+
+      <li class="nav-item" [class.active]="newsRoute.isActive">
+        <a class="nav-link" routerLink="/news" #newsRoute>
+          <i class="far fa-newspaper mr-1"></i>
+          News
+        </a>
+      </li>
+
+      <li class="nav-item" [class.active]="opinionsRoute.isActive">
+        <a class="nav-link" routerLink="/opinions" #opinionsRoute>
+          <i class="far fa-comments mr-1"></i>
+          Opinions
+        </a>
+      </li>
+
+
+      <li class="nav-item" [class.active]="featuresRoute.isActive">
+        <a class="nav-link" routerLink="/features" #featuresRoute>
+          <i class="fas fa-film mr-1"></i>
+          Features
+        </a>
+      </li>
+
+
+      <li class="nav-item" [class.active]="awardsRoute.isActive">
+        <a class="nav-link" routerLink="/awards" #awardsRoute>
+          <i class="fas fa-trophy mr-1"></i>
+          Year End Awards
+        </a>
+      </li>
+
+
+      <li class="nav-item" [class.active]="hofRoute.isActive">
+        <a class="nav-link" routerLink="/hof" #hofRoute>
+          <i class="far fa-list-alt mr-1"></i>
+          Hall of Fame
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<app-alert></app-alert>

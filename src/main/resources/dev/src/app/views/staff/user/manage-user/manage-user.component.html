@@ -1,0 +1,3 @@
+<app-header title="Manager User" description="Modify an existing user's permission"></app-header>
+
+<app-table (rowClick)="editUser($event.id)" [tableModel]="tableModel"></app-table>

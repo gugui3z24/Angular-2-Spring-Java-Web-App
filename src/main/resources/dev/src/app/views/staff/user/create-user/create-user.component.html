@@ -1,0 +1,49 @@
+<div class="page-header" id="banner">
+  <div class="row">
+    <div class="col-lg-8 col-md-7 col-sm-6">
+      <h1>Create User</h1>
+      <p class="lead">Create users and grant them website access. Ideally, we can make this a register page. Then, we can modify their permissions after they've signed up.</p>
+    </div>
+  </div>
+</div>
+
+<form #form="ngForm" (submit)="save()">
+  <fieldset>
+    <div class="form-group">
+      <label for="first">First Name</label>
+      <input type="text" appMask="name" class="form-control" id="first" autofocus [(ngModel)]="user.first" name="first" placeholder="First Name"
+        required>
+    </div>
+    <div class="form-group">
+      <label for="last">Last Name</label>
+      <input type="text" appMask="name" class="form-control" id="last" [(ngModel)]="user.last" name="last" placeholder="Last Name"
+        required>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="username" placeholder="Username"
+        required appMask="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input (input)="validatePasswords()" type="password" maxlength="40" class="form-control" id="password" [(ngModel)]="user.password"
+        name="password" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password</label>
+      <input (input)="validatePasswords()" #confirmModel="ngModel" type="password" maxlength="40" class="form-control" id="confirm-password"
+        [(ngModel)]="confirm" name="confirm-password" placeholder="Confirm Password" required>
+      <div class="invalid-error-message" *ngIf="confirmModel.errors?.mismatch">Passwords do not match.</div>
+    </div>
+    <div class="form-group">
+      <label for="permission">Permission (Default is User)</label>
+      <select class="form-control" id="permission-select" name="permission-select" [(ngModel)]="user.role.id" required>
+        <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+      </select>
+    </div>
+    <button [disabled]="!form.valid" type="submit" class="btn btn-outline-primary">
+      <i class="fas fa-user-plus mr-1"></i>
+      Register
+    </button>
+  </fieldset>
+</form>

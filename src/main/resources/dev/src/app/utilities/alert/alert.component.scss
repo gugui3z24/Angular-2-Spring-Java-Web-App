@@ -1,0 +1,13 @@
+div#alert-container {
+    margin: auto;
+}
+
+div#host-container {
+    position: fixed;
+    margin-top: 4rem;
+    top: 0;
+    left: 6%;
+    z-index: 1045;
+    width: 85%;
+    display: flex;
+}

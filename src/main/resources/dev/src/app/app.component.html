@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<app-footer></app-footer>
+
+<div class="row pb-2 px-2" id="nodq-container">
+    <div class="col-lg-3">
+        <app-news-card></app-news-card>
+        <app-opinions-card></app-opinions-card>
+        <app-special-card></app-special-card>
+    </div>
+
+    <div class="col-lg-6">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="col-lg-3">
+        <app-twitter-feed></app-twitter-feed>
+        <app-recent-card></app-recent-card>
+        <app-people-card></app-people-card>
+    </div>
+</div>
+
+<app-overlay></app-overlay>

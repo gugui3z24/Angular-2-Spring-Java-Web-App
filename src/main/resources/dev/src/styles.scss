@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~primeng/resources/themes/omega/theme.css';
+@import '~primeng/resources/primeng.min.css';
+
+body {
+    overflow-x: hidden;
+}
+
+.nodq-link-group {
+    font-size: 80% !important;
+    span:hover {
+        cursor: pointer;
+        color: #CC0000;
+        transition: 0.3s;
+    }
+}
+
+.nodq-card {
+    max-height: 310px !important;
+    overflow: auto !important;
+}
+
+blockquote {
+    font-size: 1rem !important;
+}
+
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 1rem 2rem !important;
+    }
+}
+
+i.social-media-icon:hover {
+    cursor: pointer;
+}
+
+i.refresh-button:hover {
+    cursor: pointer;
+    color: #CC0000;
+    transition: 0.3s;
+}
+
+.tooltip.top .tooltip-inner {
+    background-color:red;
+}
+.tooltip.top .tooltip-arrow {
+      border-top-color: red;
+}
+.invalid-error-message {
+    color: #CC0000;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+}
+
+tr.table-primary, tr.table-light {
+    color: #000000;
+}
+
+.card-loader {
+    font-size: 2rem;
+}
+
+.fr-wrapper {
+    max-height: 500px;
+    overflow: auto;
+}
+
+a[href="https://www.froala.com/wysiwyg-editor?k=u"] {
+    display: none !important;
+    position: absolute;
+    top: -99999999px;
+  }
+
+.fr-box.fr-basic .fr-element {
+    min-height: 300px !important;
+}

@@ -1,0 +1,34 @@
+<app-header [title]="header.title" [description]="header.description"></app-header>
+
+<div class="text-center">
+  <img [src]="img">
+</div>
+
+<div class="card text-white bg-dark my-3 w-100">
+  <div class="card-header">
+    {{ article.subject }} - Submitted by
+    <span class="text-danger">{{ article.creator.fullName }}</span> on {{ article.createdAt | date }}
+  </div>
+  <div class="card-body">
+
+    <!-- <script src="https://cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script> -->
+
+    <div [hidden]="3 > 1">
+      <textarea [froalaEditor] [(froalaModel)]="article.body"></textarea>
+    </div>
+    <div [froalaView]="article.body"></div>
+
+  </div>
+  <div *ngIf="canEdit" class="card-footer text-muted text-right">
+    <button (click)="editArticle()" type="button" class="btn btn-outline-primary mr-2">
+      <i class="fas fa-edit mr-1"></i>
+      Edit Post
+    </button>
+    <button (click)="deleteArticle()" type="button" class="btn btn-outline-danger">
+      <i class="fas fa-trash-alt mr-1"></i>
+      Delete Post
+    </button>
+  </div>
+</div>
+
+<app-discussion></app-discussion>

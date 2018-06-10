@@ -1,0 +1,34 @@
+<app-header [title]="article.id ? 'Edit Article' : 'Post Article'" description="Use the form below to post a new article or edit an existing article."></app-header>
+
+<form #form="ngForm" (submit)="submit()">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="article-subject">Article Subject</label>
+        <input type="text" class="form-control" name="article-subject" [(ngModel)]="article.subject" id="article-subject" placeholder="Article Subject"
+          required maxlength="60">
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="form-group">
+        <label for="article-category">Article Category</label>
+        <select class="form-control" id="article-category" name="article-category" [(ngModel)]="article.category.id" required>
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Article Body</label>
+    <div [froalaEditor] [(ngModel)]="article.body" name="article-body" id="article-body"></div>
+  </div>
+
+  <button [disabled]="!form.valid" type="submit" class="btn btn-outline-primary mt-2">
+    <i class="fas fa-comments mr-1"></i>
+    {{ article.id ? 'Update' : 'Post' }}
+  </button>
+</form>

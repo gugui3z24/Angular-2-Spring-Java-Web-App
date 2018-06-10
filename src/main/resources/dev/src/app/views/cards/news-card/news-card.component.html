@@ -1,0 +1,20 @@
+<div class="card text-white mt-4">
+  <div class="card-header">
+    <i class="far fa-newspaper mr-1"></i>
+    News & Rumors
+  </div>
+  <div class="card-body nodq-card">
+    <div *ngIf="articles; else loading" class="d-flex flex-column nodq-link-group">
+      <span *ngFor="let article of articles" (click)="openArticle(article.id)">
+        <i class="fas fa-link mr-1"></i>
+        {{ article.subject }}
+      </span>
+      <a routerLink="/news/" class="btn btn-outline-danger mt-2">More News and Rumors</a>
+    </div>
+    <ng-template #loading>
+      <div class="d-flex justify-content-center">
+        <i class="fas fa-spinner fa-spin card-loader"></i>
+      </div>
+    </ng-template>
+  </div>
+</div>

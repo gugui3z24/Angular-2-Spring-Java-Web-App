@@ -1,0 +1,27 @@
+<form #form="ngForm" (submit)="submit()">
+  <div class="modal-header">
+    <h4 class="modal-title">Login</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalService.dismissModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" appMask="username" name="username" required [(ngModel)]="user.username" class="form-control" autocomplete="off"
+        autofocus id="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input name="password" maxlength="40" required [(ngModel)]="user.password" type="password" autocomplete="off" class="form-control"
+        id="password" placeholder="Password">
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button [disabled]="!form.valid" type="submit" class="btn btn-outline-primary">
+      <i class="fas fa-sign-in-alt mr-1"></i>
+      Login
+    </button>
+  </div>
+</form>

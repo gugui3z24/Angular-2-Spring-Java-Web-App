@@ -1,0 +1,24 @@
+<app-header [title]="header.title" [description]="header.description"></app-header>
+
+<div class="text-center">
+  <img [src]="img">
+</div>
+
+<p>Coming soon: Sorting, Searching, Filters, and more!</p>
+
+<table class="table table-hover mt-2">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">Subject</th>
+      <th scope="col">Dated Posted</th>
+      <th scope="col">Posted By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr (click)="viewArticle(article.id)" *ngFor="let article of articles" class="table-light">
+      <td>{{ article.subject }}</td>
+      <td>{{ article.createdAt | date }}</td>
+      <td>{{ article.creator.fullName }}</td>
+    </tr>
+  </tbody>
+</table>

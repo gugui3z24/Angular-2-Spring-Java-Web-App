@@ -1,5 +1,7 @@
 # Angular 6/Spring Java Web Application - NoDQ
 
+[Live Demo](https://nodq-3z24.herokuapp.com)
+
 This web application combines Angular 6, a TypeScript-based open-source front-end web application platform, and Spring 5 (Spring Boot w/Maven), a comprehensive programming and configuration model for modern Java-based enterprise applications. NoDQ is a wrestling article managing website, which implements rich-text article creation, user management, and twitter/disqus commenting integration. Some key features include:
 
 - Spring Security (Stateless Authentication, Authorization w/Permissions and Access Control),
@@ -7,6 +9,11 @@ This web application combines Angular 6, a TypeScript-based open-source front-en
 - Java MySQL Connector
 - Spring REST
 - Java TypeScript Generator that creates all needed classes and interfaces for Angular
+
+## Screenshots
+![Screenshot 1](https://i.imgur.com/Rkal4z9.png)
+![Screenshot 2](https://i.imgur.com/XOWYrGS.png)
+![Screenshot 3](https://i.imgur.com/ZyO6ELI.png)
 
 ## Getting Started
 

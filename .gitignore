@@ -75,3 +75,6 @@ src/main/resources/dev/typings
 # System Files
 .DS_Store
 Thumbs.db
+
+# Environment Variables
+heroku.md

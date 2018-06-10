@@ -78,7 +78,7 @@ Before making any requests to your API, make sure to start the backend server (u
 
 ## Authors
 
-* **David Acosta** - [Portfolio](www.acostadavid.com)
+* **David Acosta** - [Portfolio](http://www.acostadavid.com)
 
 ## License
 
